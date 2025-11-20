@@ -1,0 +1,315 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  position: relative;
+  margin: 5% auto;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.close:hover {
+  color: #3498db;
+}
+
+.btn-login {
+  padding: 12px 25px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(54, 209, 220, 0.4);
+}
+
+.wrapper {
+  width: 100%;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.wrapper .title {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+}
+.wrapper form {
+  padding: 20px 30px 40px 30px;
+}
+.wrapper form .field {
+  position: relative;
+  margin-top: 20px;
+}
+.wrapper form .field input {
+  width: 100%;
+  height: 50px;
+  padding-left: 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.wrapper form .field input:focus {
+  border-color: #36d1dc;
+  box-shadow: 0 0 8px rgba(54, 209, 220, 0.3);
+}
+.wrapper form .field label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.wrapper form .field input:focus ~ label,
+.wrapper form .field input:valid ~ label {
+  top: -8px;
+  font-size: 13px;
+  color: #36d1dc;
+  background: #fff;
+  padding: 0 5px;
+}
+
+/* Submit Button */
+form .field input[type="submit"] {
+  width: 100%;
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form .field input[type="submit"]:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(54, 209, 220, 0.4);
+}
+
+/* Links */
+form .pass-link {
+  text-align: center;
+  margin-top: 15px;
+}
+form .pass-link a {
+  color: #36d1dc;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+form .pass-link a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.filter-btn {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.service-item {
+  background: #f8f9fa;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+#messageBox {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  width: 30vw;
+  padding: 15px 25px;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#messageBox.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#messageBox.hide {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Overlay for the payment modal */
+#paymentModal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal content box */
+#paymentModal .modal-content {
+  background-color: #fff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 25px;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Close button */
+#paymentModal .close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+#paymentModal .close:hover {
+  color: #e74c3c;
+}
+
+/* Modal heading */
+#paymentModal h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Form group styling */
+#paymentModal .form-group {
+  margin-bottom: 20px;
+}
+
+#paymentModal .form-group label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+#paymentModal .form-group input[type="file"] {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+
+#paymentModal .form-group input[type="file"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+#paymentModal .modal-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+#paymentModal .modal-footer .btn-primary {
+  background-color: #28a745;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#paymentModal .modal-footer .btn-primary:hover {
+  background-color: #218838;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
