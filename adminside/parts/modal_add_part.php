@@ -16,9 +16,9 @@
       </div>
 
       <div class="form-group">
-        <label>Quantity</label>
-        <input type="number" name="quantity" min="0" required>
-      </div>
+    <label>Quantity</label>
+    <input type="number" name="quantity" min="0" max="1000" maxlength="4" required oninput="this.value=this.value.slice(0,this.maxLength);">
+</div>
 
       <div class="form-group">
         <label>Unit Price</label>

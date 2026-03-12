@@ -98,7 +98,8 @@
   transition: all 0.3s ease;
 }
 .wrapper form .field input:focus ~ label,
-.wrapper form .field input:valid ~ label {
+.wrapper form .field input:valid ~ label,
+.wrapper form .field label.active {
   top: -8px;
   font-size: 13px;
   color: #36d1dc;

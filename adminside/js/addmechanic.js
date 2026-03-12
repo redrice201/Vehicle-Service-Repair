@@ -121,3 +121,30 @@ $(document).on("click", ".edit-status-btn", function () {
 
   openModal("statusModal");
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneInput = document.querySelector(
+    '#addMechanicModal input[name="phone"]'
+  );
+
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function (e) {
+      let value = this.value.replace(/\D/g, "");
+
+      if (value.length > 11) {
+        value = value.substring(0, 11);
+      }
+
+      if (value.length > 0) {
+        if (value.startsWith("09")) {
+          if (value.length > 11) value = value.substring(0, 11);
+        } else {
+          value = "09" + value;
+          if (value.length > 11) value = value.substring(0, 11);
+        }
+      }
+
+      this.value = value;
+    });
+  }
+});

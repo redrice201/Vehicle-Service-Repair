@@ -98,10 +98,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="email" class="form-control" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
                 </div>
 
-                <div class="form-group">
-                    <label>Contact Number</label>
-                    <input type="text" class="form-control" name="phone" value="<?= htmlspecialchars($user['phone']) ?>" required>
-                </div>
+                 <div class="form-group">
+    <label>Contact Number</label>
+    <input type="tel" name="phone" class="form-control" value="<?= htmlspecialchars($user['phone']) ?>" pattern="09[0-9]{9}" maxlength="11" required title="Philippine mobile number format: 09XXXXXXXXX (11 digits)">
+</div> 
 
                 <div class="form-group">
                     <label>Home Address</label>

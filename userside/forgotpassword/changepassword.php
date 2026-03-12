@@ -2,8 +2,11 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+$email = '';
+if (isset($_SESSION['password_reset']) && isset($_SESSION['password_reset']['email'])) {
+    $email = $_SESSION['password_reset']['email'];
+}
 ?>
-
 
 <div id="changeForgotPasswordModal" class="modal">
   <div class="modal-content">
@@ -17,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="field">
           <input type="password" name="confirm_password" required placeholder="Confirm Password">
         </div>
-      <input type="hidden" name="email" value="<?= $_SESSION['password_reset']['email'] ?>">
+      <input type="hidden" name="email" value="<?= htmlspecialchars($email) ?>">
         <div class="field">
           <input type="submit" value="Change Password">
         </div>

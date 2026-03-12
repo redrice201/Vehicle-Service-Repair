@@ -17,9 +17,9 @@
       </div>
 
       <div class="form-group">
-        <label>Phone</label>
-        <input type="text" name="phone" id="edit_phone">
-      </div>
+    <label>Phone</label>
+    <input type="tel" name="phone"  id="edit_phone" pattern="09[0-9]{9}" maxlength="11" required title="Philippine mobile number format: 09XXXXXXXXX (11 digits)">
+</div>
 
       <div class="form-group">
         <label>Specialization</label>

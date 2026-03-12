@@ -11,7 +11,6 @@ include "userparts/link.php";
             </div>
           <form id="registerForm">
 
-
     <div class="field">
         <input type="text" name="full_name" required>
         <label>Full Name</label>
@@ -23,7 +22,7 @@ include "userparts/link.php";
     </div>
 
     <div class="field">
-        <input type="text" name="contact" required>
+        <input type="number" name="contact" required>
         <label>Contact</label>
     </div>
 
@@ -46,11 +45,7 @@ include "userparts/link.php";
         <input type="submit" value="Register">
     </div>
 
-    
-
 </form>
-
-
 
         </div>
     </div>
